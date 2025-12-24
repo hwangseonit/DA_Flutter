@@ -4,12 +4,12 @@
 
 ## 👥 Thành viên nhóm
 
-| Họ và Tên           | Mã sinh viên | Tài khoản |
-| ------------------- | ------------ | --------- |
-| Trần Văn Sơn        |              |           |
-| Phàn Văn Dài        |              |           |
-| Lê Minh Hải         |              |           |
-| Nguyễn Sỹ Quang Huy |              |           |
+| Họ và Tên           | Mã sinh viên | Tài khoản   |
+| ------------------- | ------------ | ----------- |
+| Trần Văn Sơn        | 25A4041913   | HwangseonIT |
+| Phàn Văn Dài        | 25A4041529   | Vandai-25   |
+| Lê Minh Hải         | 25A4041539   | Lehai-svg   |
+| Nguyễn Sỹ Quang Huy | 25A4041547   | Quanghuy299 |
 
 ## 🛠️ Công nghệ sử dụng
 
@@ -34,19 +34,20 @@
 
 ## 🚀 Cách chạy dự án
 
-### Yêu cầu
+### Cài đặt từ APK
 
-- Flutter SDK (>=2.14.0 <3.0.0)
-- Android Studio / Xcode (cho iOS)
-- Tài khoản Firebase
+- Tải file APK và cài đặt trực tiếp trên thiết bị Android
 
-### Các bước chạy
+### Chạy từ mã nguồn
 
-1. **Clone project**
+**Yêu cầu**: Flutter SDK (>=2.14.0 <3.0.0)
+
+**Các bước:**
+
+1. **Làm sạch dự án**
 
    ```bash
-   git clone <repository-url>
-   cd DA_Flutter
+   flutter clean
    ```
 
 2. **Cài đặt dependencies**
@@ -55,29 +56,30 @@
    flutter pub get
    ```
 
-3. **Cấu hình Firebase**
+3. **Cấu hình API Cloudinary**
 
-   - Thêm file `google-services.json` vào `android/app/`
-   - Cấu hình Firebase cho iOS (nếu cần)
+   Tạo file `.env` trong thư mục gốc với nội dung:
 
-4. **Chạy ứng dụng**
-
-   ```bash
-   # Chạy app người dùng
-   flutter run
-
-   # Chạy app admin
-   flutter run -t lib/main_admin.dart
+   ```
+   CLOUDINARY_CLOUD_NAME=dejlpxxrz
+   CLOUDINARY_API_KEY=588845788459418
+   CLOUDINARY_API_SECRET=nyrYwb-rf5ucfj_0NAzVx0Zwjw0
+   CLOUDINARY_UPLOAD_PRESET=flutter_uploads
    ```
 
-5. **Build ứng dụng**
+4. **Cấu hình API Gemini**
+
+   Thêm vào file `.env`:
+
+   ```
+   GEMINI_API_KEY=AIzaSyAl3HdEbFswuSO5kpdvR_VW3OW-vSfXAVs
+   ```
+
+5. **Chạy ứng dụng**
 
    ```bash
-   # Android
-   flutter build apk
-
-   # iOS
-   flutter build ios
+   flutter run                        # App người dùng
+   flutter run -t lib/main_admin.dart # App admin
 
    # Web
    flutter build web
